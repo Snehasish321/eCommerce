@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <div className="flex items-center justify-between py-5 font-medium">
       {/* Logo */}
-      <img src={assets.logo} className="w-36" alt="Logo" />
+      <img src={assets.logo} className="w-48" alt="Logo" />
 
       {/* Navbar Links */}
       <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
@@ -66,18 +66,50 @@ const Navbar = () => {
 
       {/* Sidebar Menu for Small Screens */}
       <div
-        className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${
-          visible ? 'w-full' : 'w-0'
+        className={`fixed top-0 right-0 bottom-0 z-50 bg-white overflow-hidden transition-all ${
+          visible ? 'w-3/4' : 'w-0'
         }`}
       >
-        {/* Add Sidebar Content Here */}
-        <button
-           onClick={() => setVisible(false)}
-           className="p-4 flex items-center space-x-2"
+        {/* Close Button */}
+        <div
+          className="flex items-center gap-4 p-3 cursor-pointer border-b"
+          onClick={() => setVisible(false)}
         >
-          <img className="h-4 rotate-180" src={assets.dropdown_icon} alt="" />
+          <img className="h-4 rotate-180" src={assets.dropdown_icon} alt="Close Menu" />
           <p>Back</p>
-        </button>
+        </div>
+
+        {/* Menu Items */}
+        <div className="flex flex-col text-gray-700">
+          <NavLink
+            className="py-2 pl-6 border-b hover:bg-gray-100"
+            to="/"
+            onClick={() => setVisible(false)}
+          >
+            HOME
+          </NavLink>
+          <NavLink
+            className="py-2 pl-6 border-b hover:bg-gray-100"
+            to="/collection"
+            onClick={() => setVisible(false)}
+          >
+            COLLECTION
+          </NavLink>
+          <NavLink
+            className="py-2 pl-6 border-b hover:bg-gray-100"
+            to="/about"
+            onClick={() => setVisible(false)}
+          >
+            ABOUT
+          </NavLink>
+          <NavLink
+            className="py-2 pl-6 border-b hover:bg-gray-100"
+            to="/contact"
+            onClick={() => setVisible(false)}
+          >
+            CONTACT
+          </NavLink>
+        </div>
       </div>
     </div>
   );
