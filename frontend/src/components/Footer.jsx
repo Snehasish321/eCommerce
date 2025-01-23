@@ -9,3 +9,6 @@ const Footer = () => {
 }
 
 export default Footer
+
+
+// we work on the footer component tommorow
