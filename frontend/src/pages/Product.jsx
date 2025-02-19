@@ -9,6 +9,7 @@ const Product = () => {
   const { products , currency } = useContext(ShopContext);
   const [ productData , setProductData ] = useState(false);
   const [ image , setImage ] = useState('') 
+  const [ size , setSize ] = useState('')
 
   const fetchProductData = async () => {
 
@@ -63,14 +64,23 @@ const Product = () => {
               <div className='flex gap-2'>
                 {
                   productData.sizes.map((item,index) => (
-                    <button key={index} className={`border p-2 w-12 text-center bg-gray-100`}>{item}</button>
+                    <button onClick={()=>setSize(item)} key={index} className={`border p-2 w-12 text-center bg-gray-100 ${item === size ? 'border-orange-600' : ''} `}>{item}</button>
                   ))
                 }
               </div>
             </div>
+            <button className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700'>ADD TO CART</button>
+                <hr className='mt-8 sm:w-4/5' />
+                <div className='text-sm text-gray-500 mt-5 flex flex-col gap-1'>
+                    <p>100% asli maal hai</p>
+                    <p>Paisa feko tamasha dekho</p>
+                    <p>Return karo ya Exchange , dono hi 7 din ke andar asani se hota hai</p>
+                </div>
         </div>
       </div>
       
+          { /* Product ka gyan aur asli review */}
+
     </div>
   ) : <div className='opacity-0'>
 
