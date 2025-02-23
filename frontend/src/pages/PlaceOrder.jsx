@@ -42,20 +42,17 @@ const PlaceOrder = () => {
           <Title text1={'PAYMENT'} text2={'METHOD'} />
           <div className='flex gap-3 flex-col lg:flex-row'>
             {/* Razorpay */}
-            <div onClick={() => setMethod('razorpay')} className='flex items-center gap-3 border p-2 px-3 cursor-pointer'>
-              <div className={`w-3.5 h-3.5 border rounded-full ${method === 'razorpay' ? 'bg-green-600' : ''}`}></div>
+            <div onClick={() => setMethod('razorpay')} className={`flex items-center gap-3 border p-2 px-3 cursor-pointer ${method === 'razorpay' ? 'border-black' : ''}`}>
               <img className='h-5 mx-4' src={assets.razorpay_logo} alt="Razorpay" />
             </div>
 
             {/* Stripe */}
-            <div onClick={() => setMethod('stripe')} className='flex items-center gap-3 border p-2 px-3 cursor-pointer'>
-              <div className={`w-3.5 h-3.5 border rounded-full ${method === 'stripe' ? 'bg-green-600' : ''}`}></div>
+            <div onClick={() => setMethod('stripe')} className={`flex items-center gap-3 border p-2 px-3 cursor-pointer ${method === 'stripe' ? 'border-black' : ''}`}>
               <img className='h-5 mx-4' src={assets.stripe_logo} alt="Stripe" />
             </div>
 
             {/* Cash on Delivery */}
-            <div onClick={() => setMethod('cod')} className='flex items-center gap-3 border p-2 px-3 cursor-pointer'>
-              <div className={`w-3.5 h-3.5 border rounded-full ${method === 'cod' ? 'bg-green-600' : ''}`}></div>
+            <div onClick={() => setMethod('cod')} className={`flex items-center gap-3 border p-2 px-3 cursor-pointer ${method === 'cod' ? 'border-black' : ''}`}>
               <p className='text-gray-800 text-sm font-medium mx-4'>CASH ON DELIVERY</p>
             </div>
           </div>
